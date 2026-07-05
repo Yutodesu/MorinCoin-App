@@ -1,0 +1,44 @@
+name: Build Flet APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Flet CLI
+      run: |
+        pip install flet[cli]
+
+    - name: Setup Java JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Setup Flutter SDK
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.22.0'
+
+    - name: Build APK
+      run: |
+        flet build apk main.py
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: morincoin-app-apk
+        path: build/apk/*.apk
