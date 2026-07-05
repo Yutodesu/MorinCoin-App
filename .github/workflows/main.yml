@@ -25,7 +25,7 @@ jobs:
       with:
         flutter-version: '3.41.7'
     - name: Build APK
-      run: flet build apk main.py --no-interactive
+      run: flet build apk main.py
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
