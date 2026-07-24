@@ -542,4 +542,4 @@ def main(page: ft.Page):
     card_admin = ft.Container(content=ft.Column([ft.Text("🛠️ Admin", size=16, color="#eab308", weight=ft.FontWeight.BOLD), input_admin_qtd, ft.Button("Gerar MRN", on_click=admin_gerar_moedas_do_nada, bgcolor="#eab308", color="black", width=280)]), padding=15, visible=False)
 
     input_json_importar = ft.TextField(label="Cole o JSON aqui", multiline=True, min_lines=3, max_lines=5, border_color="#34d399", on_focus=focus_scroll)
-    view_importar_container = ft.Container(content=ft.Column([input_json_importar, ft.Button("Confirmar Depósito", on_click=processar_importacao_texto, bgcolor="#34d399", color="black", width=280)]), padding=10, visible=False)", color="black", width=280)]), padding=10, visible=False)
+    view_importar_container = ft.Container(content=ft.Column([input_json_importar, ft.Button("Confirmar Depósito", on_click=processar_importacao_texto, bgcolor="#34d399", color="black", width=280)]), padding=10, visible=False)
