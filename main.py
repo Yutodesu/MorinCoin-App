@@ -143,7 +143,7 @@ def main(page: ft.Page):
             config = cursor.fetchone()
             if config and config[0] == "claro":
                 page.theme_mode = ft.ThemeMode.LIGHT
-                page.bgcolor = "#f3f4f6"
+                page.bgcolor = "#34d399"
             else:
                 page.theme_mode = ft.ThemeMode.DARK
                 page.bgcolor = "#0b0f19"
@@ -542,4 +542,4 @@ def main(page: ft.Page):
     card_admin = ft.Container(content=ft.Column([ft.Text("🛠️ Admin", size=16, color="#eab308", weight=ft.FontWeight.BOLD), input_admin_qtd, ft.Button("Gerar MRN", on_click=admin_gerar_moedas_do_nada, bgcolor="#eab308", color="black", width=280)]), padding=15, visible=False)
 
     input_json_importar = ft.TextField(label="Cole o JSON aqui", multiline=True, min_lines=3, max_lines=5, border_color="#34d399", on_focus=focus_scroll)
-    view_importar_container = ft.Container(content=ft.Column([input_json_importar, ft.Button("Confirmar Depósito", on_click=processar_importacao_texto, bgcolor="#34d
+    view_importar_container = ft.Container(content=ft.Column([input_json_importar, ft.Button("Confirmar Depósito", on_click=processar_importacao_texto, bgcolor="#34d399", color="black", width=280)]), padding=10, visible=False)", color="black", width=280)]), padding=10, visible=False)
